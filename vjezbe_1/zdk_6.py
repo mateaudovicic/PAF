@@ -1,12 +1,18 @@
 import matplotlib.pyplot as plt
-
+from math import sqrt
 def tocka_kruznica(r, p, q, x, y):
     if a > 1:
         print("Točka T({}, {}) nalazi se izvan tražene kružnice.".format(x, y))
+        d = sqrt((x - p)**2 + (y - q)**2)
+        print("Udaljenost točke od kružnice: {}".format(d))
     elif a == 1:
         print("Točka T({}, {}) nalazi se na traženoj kružnici.".format(x, y))
+        print("Udaljenost točke od kružnice: {}".format(r))
     elif a < 1:
         print("Točka T({}, {}) nalazi se unutar tražene kružnice.".format(x, y))
+        s = sqrt((x - p)**2 + (y - q)**2)
+        m = r - s
+        print("Udaljenost točke od kružnice: {}".format(k))
 
     if odabir == "DA":
         ime_slike = input("Unesite ime slike: ")
