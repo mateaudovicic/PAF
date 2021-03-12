@@ -26,7 +26,9 @@ odabir = input("Unesite 'DA' ako želite spremiti sliku. Inače će slika biti s
 plt.xlabel('x os')
 plt.ylabel('y os')
 plt.plot([x1, x2], [y1, y2])
-    
+plt.plot(x1, y1, marker='o', markerfacecolor='red', markersize=10)
+plt.plot(x2, y2, marker='o', markerfacecolor='red', markersize=10)
+ 
 pravac(x1, y1, x2, y2)
 
 
