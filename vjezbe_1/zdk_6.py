@@ -4,14 +4,15 @@ def tocka_kruznica(r, p, q, x, y):
     if a > 1:
         print("Točka T({}, {}) nalazi se izvan tražene kružnice.".format(x, y))
         d = sqrt((x - p)**2 + (y - q)**2)
-        print("Udaljenost točke od kružnice: {}".format(d))
+        m = d - r
+        print("Udaljenost točke od kružnice: {}".format(m))
     elif a == 1:
         print("Točka T({}, {}) nalazi se na traženoj kružnici.".format(x, y))
-        print("Udaljenost točke od kružnice: {}".format(r))
+        print("Udaljenost točke od kružnice: 0")
     elif a < 1:
         print("Točka T({}, {}) nalazi se unutar tražene kružnice.".format(x, y))
         s = sqrt((x - p)**2 + (y - q)**2)
-        m = r - s
+        k = r - s
         print("Udaljenost točke od kružnice: {}".format(k))
 
     if odabir == "DA":
