@@ -18,13 +18,23 @@ print("Grafovi u prvih 10 sekundi jednolikog gibanja u jednoj dimenziji.")
 F = 60
 m = 15
 
-# v-t graf
 
 lista_v = []
+lista_x = []
+lista_a = []
 for t in np.arange(0.1, 10, 0.1):
     a = F / m
     v = a * t
+    v = v + a * t
+    x = v * t
+    x = x + v * t
+    a = v / t
+    lista_x.append(x)
     lista_v.append(v)
+    lista_a.append(a)
+
+# v-t graf
+
 plt.ylabel('v(m/s)')
 plt.xlabel('t(s)')
 plt.title("v-t graf")
@@ -34,11 +44,6 @@ plt.show()
 
 # x-t graf
 
-lista_x = []
-for t in np.arange(0.1, 10, 0.1):
-    v = a * t
-    x = v * t
-    lista_x.append(x)
 plt.ylabel('x(m)')
 plt.xlabel('t(s)')
 plt.title("x-t graf")
@@ -48,11 +53,6 @@ plt.show()
 
 # a-t graf
 
-lista_a = []
-for t in np.arange(0.1, 10, 0.1):
-    v = a * t
-    a = v / t
-    lista_a.append(a)
 plt.ylabel('a(m/s^2)')
 plt.xlabel('t(s)')
 plt.title("a-t graf")
