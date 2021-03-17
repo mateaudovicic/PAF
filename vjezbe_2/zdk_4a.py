@@ -32,16 +32,22 @@ for t in np.arange(0, 10, 0.01):
         #d = ((x1[i] - p)**2 + (y1[i] - q)**2) - r**2
         #d_d.append(d)
 
-for t in range(0, 10):
+for t in np.arange(0, 10, 0.01):
 #for t in np.arange(0, 10, 0.01):
+    #print("t: {}".format(t))
     x = x + vx * t 
     vy = vy - g * t
     y = y + vy * t
     x1.append(x)
     y1.append(y)
     t_t.append(t)
-    for i in range(t):
-        d = ((x1[i] - p)**2 + (y1[i] - q)**2) - r**2
+    #for i in np.arange(0, t, 0.01):
+    for i in range(len(x1)):
+        d = m.sqrt((x1[i] - p)**2 + (y1[i] - q)**2)
+        """print("m")
+        print(x1[i])
+        print(y1[i])
+        print(d)"""
         d_d.append(d)
         
 

@@ -36,10 +36,13 @@ def meta_putanja(p, q, r, v0, alfa, x1, y1, t, g):
     plt.show()
 
 def udaljenost(d_d, r):
+    print(min(d_d))
     if r < min(d_d):
         #print("Meta je pogođena.")
-        print("Udaljenost od mete: {} m".format(min(d_d)))
+        u = min(d_d) -r
+        print("Meta nije pogođena. Udaljenost od mete: {} m".format(u))
     else:
+        #u = min(d_d) -r 
         #print("Udaljenost od mete: {} m".format(min(d_d)))
         print("Meta je pogođena.")
     
