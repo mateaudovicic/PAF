@@ -15,14 +15,14 @@ def graf(v0, alfa, x1, y1, t, g):
 
 def h_max(v0, g, alfa):
     h = (v0 ** 2 / 2*g) * (np.sin(alfa))**2
-    print("Maksimalna visina: {}".format(h))
+    print("Maksimalna visina: {} m".format(h))
 
 def domet(v0, g, alfa):
     D = (v0 ** 2 / g) * np.sin(2*alfa)
-    print("Domet: {}".format(D))
+    print("Domet: {} m".format(D))
     
 def v_max(v0):
-    print("Maksimalna brzina: {}".format(v0))
+    print("Maksimalna brzina: {} m/s".format(v0))
 
 def meta_putanja(p, q, r, v0, alfa, x1, y1, t, g):
     circle1 = plt.Circle((p, q), r, color='r')
@@ -35,7 +35,12 @@ def meta_putanja(p, q, r, v0, alfa, x1, y1, t, g):
     plt.plot(x1, y1)
     plt.show()
 
-def udaljenost():
-    ...
-    #print("Udaljenost od mete: {}".format())
+def udaljenost(d_d, r):
+    if r < min(d_d):
+        #print("Meta je pogođena.")
+        print("Udaljenost od mete: {} m".format(min(d_d)))
+    else:
+        #print("Udaljenost od mete: {} m".format(min(d_d)))
+        print("Meta je pogođena.")
+    
     
