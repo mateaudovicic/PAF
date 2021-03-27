@@ -38,17 +38,18 @@ def h_max(v0, g, alfa):
 
 
 def domet(v0, g, alfa):
-    x1 = []
     vx = v0 * m.cos(alfa)
+    vy = v0 * m.sin(alfa)
     x = 0
+    y = 0
+    dt = 0.01
     while True:
-        for t in np.arange(0, 10, 0.01):
-            x = x + vx * t
-            if x >= 0:
-                x1.append(x)
-            else:
-                break
-    print("Domet: {} m".format(max(x1)))
+        x = x + vx * dt
+        vy = vy - g * dt
+        y = y + vy * dt
+        if y <= 0:
+            break
+    print("Domet: {} m".format(x))
     
 def v_max(v0, alfa, g):
     v = []
