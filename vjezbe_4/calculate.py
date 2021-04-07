@@ -51,8 +51,8 @@ g_y = []
 d_y = []
 dots = []
 x = 0
-for i in range(30):
-    x += 1
+for i in range(20):
+    x += 50
     x_x.append(x)
     gornja, donja = calculus.integral(calculus.f4, 0, 1, x)
     result = calculus.trapezium(calculus.f4, 0, 1, x)

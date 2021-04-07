@@ -80,7 +80,7 @@ def trapezium(func, a, b, N):
     for i in range(N):
         I += ((func(g_x) + func(d_x)) /2) *dx
         g_x += dx
-        d_x += dx 
+        d_x += dx
     return I
 
 def analytic(func, x1, x2):
