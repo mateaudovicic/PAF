@@ -21,7 +21,7 @@ plt.ylabel('f(x)')
 plt.xlabel('x')
 plt.title("Numerical derivation $f(x) = 5x^3 - 2x^2 + 2x - 3$")
 
-lista1_1, lista2_2 = calculus.der(calculus.f3, -2, 2, 0.2, 3)
+lista1_1, lista2_2 = calculus.der(calculus.f3, -2, 2, 0.2, 2)
 plt.plot(lista1_1, lista2_2, ".") 
 
 d = -2
