@@ -160,9 +160,10 @@ class HarmonicOscillator:
         result_min = np.where(arr == min(self.x_x))
         res_max = functools.reduce(lambda sub, ele: sub * 10 + ele, result_max)
         res_min = functools.reduce(lambda sub, ele: sub * 10 + ele, result_min)
-        time = abs((self.t_t[int(res_max)]) - (self.t_t[int(res_min)])) /2
+        time = abs((self.t_t[int(res_max)]) - (self.t_t[int(res_min)])) *2
         print("Period titranja numerički: {} s".format(time))
         return time
+
 
     def analytic(self):
         a =  2 * m.pi * m.sqrt(self.m/self.k)
