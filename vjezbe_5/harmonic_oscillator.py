@@ -1,5 +1,7 @@
 import math as m
 import matplotlib.pyplot as plt
+import numpy as np
+import functools
 
 class HarmonicOscillator:
 
@@ -145,3 +147,18 @@ class HarmonicOscillator:
         plt.xlabel("t [s]")
         plt.ylabel("x [m]")
         plt.show()
+
+    # 2.zdk (vježbe)
+
+    def numeric(self):
+        self.oscillate(10)
+        arr = np.array(self.x_x)
+        result = np.where(arr == max(self.x_x))
+        res = functools.reduce(lambda sub, ele: sub * 10 + ele, result)
+        time = 2 * (self.t_t[int(res)])
+        #print("Period titranja: {} s".format(time))
+        return time
+
+    def analytic(self):
+        a =  2 * m.pi * m.sqrt(self.m/self.k)
+        return a
