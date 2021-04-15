@@ -16,6 +16,7 @@ class HarmonicOscillator:
         self.a_a = []
         self.x_x = []
         self.v_v = []
+        self.xx = x0
 
 
     def reset(self):
@@ -151,14 +152,19 @@ class HarmonicOscillator:
     # 2.zdk (vježbe)
 
     def numeric(self):
-        self.oscillate(10)
+        self.reset()
+        self.x0 = self.xx
+        self.oscillate(2)
         arr = np.array(self.x_x)
-        result = np.where(arr == max(self.x_x))
-        res = functools.reduce(lambda sub, ele: sub * 10 + ele, result)
-        time = 2 * (self.t_t[int(res)])
-        #print("Period titranja: {} s".format(time))
+        result_max = np.where(arr == max(self.x_x))
+        result_min = np.where(arr == min(self.x_x))
+        res_max = functools.reduce(lambda sub, ele: sub * 10 + ele, result_max)
+        res_min = functools.reduce(lambda sub, ele: sub * 10 + ele, result_min)
+        time = abs((self.t_t[int(res_max)]) - (self.t_t[int(res_min)])) /2
+        print("Period titranja numerički: {} s".format(time))
         return time
 
     def analytic(self):
         a =  2 * m.pi * m.sqrt(self.m/self.k)
+        print("Period titranja analitički: {} s".format(a))
         return a
