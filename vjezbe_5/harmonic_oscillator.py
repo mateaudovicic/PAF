@@ -155,17 +155,20 @@ class HarmonicOscillator:
         self.reset()
         self.x0 = self.xx
         self.oscillate(2)
-        arr = np.array(self.x_x)
+        index_max = self.x_x.index(max(self.x_x))
+        index_min = self.x_x.index(min(self.x_x))
+        time = abs((self.t_t[int(index_max)]) - (self.t_t[int(index_min)])) *2
+        """arr = np.array(self.x_x)
         result_max = np.where(arr == max(self.x_x))
         result_min = np.where(arr == min(self.x_x))
         res_max = functools.reduce(lambda sub, ele: sub * 10 + ele, result_max)
         res_min = functools.reduce(lambda sub, ele: sub * 10 + ele, result_min)
-        time = abs((self.t_t[int(res_max)]) - (self.t_t[int(res_min)])) *2
-        print("Period titranja numerički: {} s".format(time))
+        time = abs((self.t_t[int(res_max)]) - (self.t_t[int(res_min)])) *2"""
+        #print("Period titranja numerički: {} s".format(time))
         return time
 
 
     def analytic(self):
         a =  2 * m.pi * m.sqrt(self.m/self.k)
-        print("Period titranja analitički: {} s".format(a))
+        #print("Period titranja analitički: {} s".format(a))
         return a

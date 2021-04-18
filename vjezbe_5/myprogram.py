@@ -10,7 +10,11 @@ h1.analytic()
 
 # domaći 2
 
-"""import domaci_2 as do
+import domaci_2 as do
 d1 = do.HarmonicOscillator(0.1, 10, 0.3, 0, 0.5, 0.5)
-d1.force(123)
-d1.plot_trajectory()"""
+d1.force_total(1)
+d1.reset
+
+d1 = do.HarmonicOscillator(0.1, 10, 0.3, 0, 0.5, 0.5)
+d1.force_total(7)
+d1.reset
