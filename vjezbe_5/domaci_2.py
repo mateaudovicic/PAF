@@ -65,10 +65,7 @@ class HarmonicOscillator:
 
 
     def air_resistance(self):
-        if self.x0 <= 0:
-            Fot = self.Cx * self.S * ((self.rho_air * (self.v0)**2)/2)                                  
-        else:
-            Fot = - self.Cx * self.S * ((self.rho_air * (self.v0)**2)/2)
+        Fot = self.Cx * self.S * ((self.rho_air * (self.v0)**2)/2)                            
         return Fot
 
 
