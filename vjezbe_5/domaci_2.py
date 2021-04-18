@@ -18,6 +18,7 @@ class HarmonicOscillator:
         self.x_x = []
         self.v_v = []
 
+
     def reset(self):
         self.m = 0.0
         self.k = 0.0
@@ -31,6 +32,7 @@ class HarmonicOscillator:
         self.x_x.clear()
         self.v_v.clear()
 
+
     def oscillate1(self, T):
         t = 0.0
         while t < T:
@@ -42,6 +44,7 @@ class HarmonicOscillator:
             self.v_v.append(self.v0)
             self.x_x.append(self.x0)
             self.t_t.append(t)
+
 
     def oscillate2(self, T):
         t = 0.0
@@ -55,9 +58,11 @@ class HarmonicOscillator:
             self.x_x.append(self.x0)
             self.t_t.append(t)
 
+
     def gravity(self):
         Fg = self.m * 9.81
         return Fg
+
 
     def air_resistance(self):
         if self.x0 <= 0:
@@ -66,9 +71,11 @@ class HarmonicOscillator:
             Fot = - self.Cx * self.S * ((self.rho_air * (self.v0)**2)/2)
         return Fot
 
+
     def elastic_force(self):
         Fel = - self.k_el * self.x0
         return Fel
+
 
     def force_total(self, m):
         if m == 1:
