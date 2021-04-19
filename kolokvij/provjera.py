@@ -6,6 +6,7 @@ z1 = zad1.VertikalniHitac(30, 30)
 z1.printInfo()
 z1.change_v0(15)
 z1.change_h0(15)
+print("\n")
 
 z2 = zad1.VertikalniHitac(10, 10)
 z2.printInfo()
@@ -17,6 +18,7 @@ maxv = z2.max_v()
 print("Maksimalna brzina: {} m".format(maxv))
 time = z2.total_time()
 print("Ukupno vrijeme trajanja gibanja: {} s".format(time))
+print("\n")
 
 z3 = zad1.VertikalniHitac(10, 10)
 x, y, z = z3.numeric2()
@@ -31,6 +33,6 @@ print("\n")
 a = maxv - x
 b = maxh - y
 c = time - z
-print("Razlika u brzini: {}".format(a))
-print("Razlika u visini: {}".format(b))
-print("Razlika u vremenu: {}".format(c))
+print("Razlika u maksimalnoj brzini: {}".format(a))
+print("Razlika u maksimalnoj visini: {}".format(b))
+print("Razlika u vremenu trajanja: {}".format(c))

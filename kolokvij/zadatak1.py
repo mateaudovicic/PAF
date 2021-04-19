@@ -108,15 +108,16 @@ class VertikalniHitac:
         self.a = self.a + (self.Fot / self.m)
         self.v0 = self.v0 + self.a * self.dt
         self.h0 = self.h0 + (self.v0 * self.dt)
-        self.v_v.append(self.v0)
-        self.h_h.append(self.h0)
-
+        if self.h0 < 0:
+            self.v_v.append(self.v0)
+            self.h_h.append(self.h0)
+        
 
     def numeric2(self):
         self.dt = 0.01
         t = 0.0
-        while self.h0 >= 0:
-            self.air_resistance(0.5)
+        self.air_resistance(0.5)
+        for i in range(len(self.h_h)):
             t += self.dt
             self.t_t.append(t)
         return max(self.v_v), max(self.h_h), max(self.t_t)
