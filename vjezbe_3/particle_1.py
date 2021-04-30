@@ -32,10 +32,10 @@ class Particle:
     def __move(self, t):
         self.x0 = self.x0 + self.vx * t 
         self.vy = self.vy - 9.81 * t
-        self.y0 = self.y0 + self.vy * t     
+        self.y0 = self.y0 + self.vy * t 
         self.x_x.append(self.x0)
         self.y_y.append(self.y0)
-
+        
     def range(self):
         O = self.x0
         while True:
