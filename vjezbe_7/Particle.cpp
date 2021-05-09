@@ -1,15 +1,13 @@
 #include <iostream>
-//#include <bits/stdc++.h>
-//#include <stdio.h>
 #include <Particle.h>
-#include <cmath>
 #include <math.h>
-#define _USE_MATH_DEFINES
 #include <vector>
 using namespace std;
 #ifndef M_PI
-    #define M_PI 3.14159265358979323846
+    #define M_PI 3.14159265358979323846 
 #endif
+//#include <bits/stdc++.h>
+//#include <stdio.h>
 
 Particle::Particle(double v0, double alpha0, double x0, double y0, double step)
 { 
@@ -32,8 +30,6 @@ void Particle::evolve()
     x += vx * dt;
     y += vy * dt;
     t += dt;
-    //xx.push_back(x);
-    //yy.push_back(y);
   }
 }
 

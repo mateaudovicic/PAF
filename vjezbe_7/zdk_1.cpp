@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 #include <math.h>
 #define _USE_MATH_DEFINES
 #include <vector>
@@ -10,19 +9,12 @@ using namespace std;
 class Particle        
 {
   public:                 
-    double v0; double alpha0; double x0; double y0; double dt;    
+    double v0, alpha0, x0, y0, dt;    
     double alpha; 
-    double vx;    
-    double vy;
+    double vx, vy;
     vector< double > xx;
     vector< double > yy;
-    double r0;
-    double t0;
-
-    //double x_x[100] = {};
-    //double y_y[100] = {};
-    //list<double> x_x;
-    //list<double> y_y;
+    double r0, t0;
 
     Particle(double v0_, double alpha0_, double x0_, double y0_, double dt_)
     {
@@ -52,8 +44,6 @@ class Particle
           break;
         }
       }
-      //x_x.insert(x0);
-      //y_y.insert(y0)
     }
 
   public:    
@@ -64,7 +54,6 @@ class Particle
       cout << "Range of projectile: " << r << " m" << endl;  
     }
 
-  public:
       void totalTime()
       {        
         move();
