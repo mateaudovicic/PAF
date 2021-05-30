@@ -3,7 +3,7 @@ import math as m
 class BungeeJumping:
 
 
-    def init(self, mass, k, h0, l, v0, S, dt = 0.01, Cx = 0.47, rho_air = 1.28):
+    def init(self, mass, k, h0, l, v0, S, dt = 0.001, Cx = 0.47, rho_air = 1.28):
         self.mass = mass
         self.k = k
         self.h0 = h0
@@ -81,7 +81,10 @@ class BungeeJumping:
             a_el = (self.k/self.mass) * d
         else:
             a_el = 0.0
-        a_ar = - abs((v0**2) * self.rho_air * self.Cx * self.S) / (2*self.mass)
+        if v0 > 0.0:
+            a_ar = - abs((v0**2) * self.rho_air * self.Cx * self.S) / (2*self.mass)
+        else:
+            a_ar = abs((v0**2) * self.rho_air * self.Cx * self.S) / (2*self.mass)
         return (-self.g + a_el + a_ar)
 
 

@@ -2,7 +2,7 @@ import bungee as bng
 import matplotlib.pyplot as plt
 
 b0 = bng.BungeeJumping()
-b0.init(70.0, 20.0, 200.0, 100.0, 0.0, 0.0, 0.01, 0.0, 0.0)
+b0.init(70.0, 50.0, 200.0, 100.0, 0.0, 0.0, 0.001, 0.0, 0.0)
 b0.move(50)
 
 fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2)
@@ -24,7 +24,7 @@ ax2.set_ylabel("E $[J]$")
 b0.reset()
 
 b1 = bng.BungeeJumping()
-b1.init(70.0, 20.0, 200.0, 100.0, 0.0, 0.125)
+b1.init(70.0, 50.0, 200.0, 100.0, 0.0, 0.125)
 b1.move(50)
 
 ax3.plot(b1.t_t, b1.y_y)
