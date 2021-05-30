@@ -76,7 +76,7 @@ class BungeeJumping:
         return (self.Ep + self.Ek + self.Eel)
 
 
-    def __acceleration(self, d, v0):   # dio za akceleraciju prepisala sam od kolegice, nisam znala sama taj dio, ionako i dalje ne radi
+    def __acceleration(self, d, v0):   
         if d > 0.0:
             a_el = (self.k/self.mass) * d
         else:
