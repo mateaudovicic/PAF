@@ -74,13 +74,14 @@ class Projectile:
             self.d = m.sqrt((self.x - self.p)**2 + (self.y - self.q)**2)
             self.d_d.append(self.d)
 
-        return self.x_x1, self.y_y1, self.d_d
+        return self.x_x1, self.y_y1, min(self.d_d)
 
 
 # 2. zadatak (Runge-Kutta)
 
 
     def __acceleration_x(self, vx): 
+        
         return (- abs((self.vx**2) * self.rho_air * self.Cx * self.S) / (2*self.mass))
 
 
